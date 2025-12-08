@@ -14,3 +14,6 @@ class Lesson(models.Model):
     end_time = models.TimeField()
     teacher = models.ForeignKey(User, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title.capitalize()
