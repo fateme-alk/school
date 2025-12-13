@@ -21,6 +21,12 @@ class LessonAdmin(admin.ModelAdmin):
         "teacher",
         "is_active",
     )
+    search_fields = (
+        "title",
+        "classroom__name",
+        "teacher__username",
+        "is_active",
+    )
 
 
 admin.site.register(Classroom)
