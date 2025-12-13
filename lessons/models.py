@@ -15,5 +15,10 @@ class Lesson(models.Model):
     teacher = models.ForeignKey(User, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
 
+    def save(self, *args, **kwargs):
+        if self.title:
+            self.title = self.title.capitalize()
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title.capitalize()
