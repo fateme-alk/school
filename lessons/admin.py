@@ -4,7 +4,7 @@ from .models import Lesson, Classroom
 
 @admin.register(Lesson)
 class LessonAdmin(admin.ModelAdmin):
-    list_display = [
+    list_display = (
         "id",
         "title",
         "classroom",
@@ -12,10 +12,15 @@ class LessonAdmin(admin.ModelAdmin):
         "end_time",
         "teacher",
         "is_active",
-    ]
-    list_display_links = [
-        "title",
-    ]
+    )
+    list_display_links = ("title",)
+    list_filter = (
+        "classroom",
+        "start_time",
+        "end_time",
+        "teacher",
+        "is_active",
+    )
 
 
 admin.site.register(Classroom)
