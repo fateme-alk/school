@@ -13,6 +13,9 @@ class LessonAdmin(admin.ModelAdmin):
         "teacher",
         "is_active",
     ]
+    list_display_links = [
+        "title",
+    ]
 
 
 admin.site.register(Classroom)
