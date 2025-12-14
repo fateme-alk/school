@@ -29,4 +29,10 @@ class LessonAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(Classroom)
+@admin.register(Classroom)
+class ClassAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "name",
+        "is_usable",
+    )
