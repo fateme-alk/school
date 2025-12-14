@@ -36,3 +36,13 @@ class ClassAdmin(admin.ModelAdmin):
         "name",
         "is_usable",
     )
+
+
+# below line are tradictional way to write admin model
+# class ClassroomAdmin(admin.ModelAdmin):
+#     list_display = (
+#         "id",
+#         "name",
+#         "is_usable",
+#     )
+# admin.site.register(Classroom, ClassroomAdmin)
