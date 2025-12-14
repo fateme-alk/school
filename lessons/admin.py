@@ -27,6 +27,12 @@ class LessonAdmin(admin.ModelAdmin):
         "teacher__username",
         "is_active",
     )
+    # it only controls which columns are allowed to be sorted when you click the column header in the Django admin UI.
+    sortable_by = (
+        "title",
+        "classroom",
+    )
+    ordering = ("title",)
 
 
 @admin.register(Classroom)
